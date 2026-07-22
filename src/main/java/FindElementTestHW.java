@@ -51,5 +51,7 @@ public class FindElementTestHW {
         System.out.println(close.getAttribute("class"));
         WebElement wrapper = driver.findElement(By.className("master-wrapper-main"));
         System.out.println(wrapper.getAttribute("class"));
+        WebElement button = driver.findElement(By.className("search-box-button"));
+        System.out.println(button.getAttribute("class"));
     }
 }
