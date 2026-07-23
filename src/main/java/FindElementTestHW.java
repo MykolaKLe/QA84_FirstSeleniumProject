@@ -18,7 +18,7 @@ public class FindElementTestHW {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @AfterMethod(enabled = false)
+    @AfterMethod(enabled = true)
     public void tearDown() {
         driver.quit();
     }
@@ -29,9 +29,9 @@ public class FindElementTestHW {
         WebElement a = driver.findElement(By.tagName("a"));
         System.out.println(a.getText());
         WebElement input = driver.findElement(By.tagName("input"));
-        System.out.println(input.getText());
+        System.out.println(input.getAttribute("value"));
         WebElement img = driver.findElement(By.tagName("img"));
-        System.out.println(img.getText());
+        System.out.println(img.getAttribute("src"));
     }
     @Test
     public void findElementById(){
