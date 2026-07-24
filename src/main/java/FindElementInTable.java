@@ -31,8 +31,9 @@ public class FindElementInTable {
     @Test
     public void findCssSelectorInTable() {
 
+        // Получаем все строки таблиц на странице
         List<WebElement> rows =
-                driver.findElements(By.cssSelector("#customers tr"));
+                driver.findElements(By.cssSelector("tr"));
 
         System.out.println(rows.size());
 
@@ -47,8 +48,9 @@ public class FindElementInTable {
         );
         System.out.println();
 
+        // Получаем все ячейки td на странице
         List<WebElement> tdElements =
-                driver.findElements(By.cssSelector("#customers td"));
+                driver.findElements(By.cssSelector("td"));
 
         System.out.println(tdElements.size());
 
@@ -63,13 +65,11 @@ public class FindElementInTable {
         );
         System.out.println();
 
-
         WebElement tr2 = driver.findElement(
                 By.cssSelector("#customers tr:nth-child(2)")
         );
 
         System.out.println(tr2.getText());
-
 
         WebElement maria = driver.findElement(
                 By.cssSelector(
