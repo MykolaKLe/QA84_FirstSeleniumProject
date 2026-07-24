@@ -42,4 +42,54 @@ public class FindElementTest {
        WebElement city = driver.findElement(By.id("city"));
         System.out.println(city.getAttribute("id"));
     }
+    @Test
+    public void findElementByClassName(){
+        WebElement telephone = driver.findElement(By.className("telephone"));
+        System.out.println(telephone.getText());
+
+        WebElement description = driver.findElement(By.className("description"));
+        System.out.println(description.getText());
+    }
+    @Test
+    public void findElementByCssSelector(){
+        //driver.findElement(By.tagName("h1"));
+        //tagName -> "h1"
+        //css -> "h1"
+        driver.findElement(By.cssSelector("h1"));
+
+        //driver.findElement(By.id("city"));
+        //id->"city"
+        //css-> "#city"
+        driver.findElement(By.cssSelector("#city"));
+
+        //driver.findElement(By.className("telephone"));
+        // className ->"telephone"
+        // css -> ".telephone"
+        driver.findElement(By.cssSelector(".telephone"));
+
+        // [attr='par']
+        WebElement element = driver.findElement(By.cssSelector("[hrer='/search]"));
+        System.out.println(element.getText());
+
+        WebElement element1 = driver.findElement(By.cssSelector("[for ='city']"));
+        System.out.println(element1.getText());
+
+        driver.findElement(By.cssSelector("[href*='car']"));
+
+        driver.findElement(By.cssSelector("[href^='/terms']"));
+
+        driver.findElement(By.cssSelector("[href$='work']"));
+
+        driver.findElement(By.cssSelector("a.navigation-link[href='/search']"));
+
+        driver.findElement(By.cssSelector("div.social-networks"));
+
+        driver.findElement(By.cssSelector(".logo>img"));
+
+        driver.findElement(By.cssSelector(".feedback-card .feedback-date"));
+
+        WebElement feedback = driver.findElement(By.cssSelector(".feedback-card:nth-child(5)"));
+        System.out.println(feedback.getText());
+
+    }
 }
